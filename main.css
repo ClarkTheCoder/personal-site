@@ -1,0 +1,365 @@
+:root {
+    --font-color: #374251;
+    --slider-color: #374351;
+    --bg-color: #f3f3f3;
+    --standout: #374251;
+    --footer-color: #374251;
+    --footer-hover: #6000e6;
+    --theme-icon: #374351;
+}
+
+[data-theme="dark"] {
+    --font-color: #999999;
+    --bg-color: black;
+    --slider-color: #f3f3f3;
+    --standout: white;
+    --footer-color: #777;
+    --footer-hover: #FFDC00;
+    --theme-icon: white;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--bg-color);
+}
+
+a {
+    color: var(--font-color);
+}
+
+main {
+    animation: fadeIn; 
+    animation-duration: 3s; 
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+  }
+  
+  .theme-switch input {
+    display:none;
+  }
+  
+  .slider {
+    background-color: var(--slider-color);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    background-color: var(--bg-color);
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--slider-color);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+#theme-icon {
+    color: var(--theme-icon);
+    font-size: .7rem;
+    margin-left: .6%;
+}
+
+h1 {
+    font-size: 4.1rem;
+    font-weight: 700;
+    margin-top: 8%;
+    letter-spacing: 1px;
+    color: var(--standout);
+}
+
+h1 span#hand{
+   margin-left: 1%; 
+   animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+   animation-duration: 2.5s;        /* Change to speed up or slow down */
+   animation-iteration-count: infinite;  /* Never stop waving :) */
+   transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+   display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+p span.stand-out {
+    color: var(--standout);
+}
+
+article p {
+    font-size: 1.4rem;
+    line-height: 160%;
+    font-weight: 300;
+    letter-spacing: .5px;
+    color: var(--font-color);
+}
+
+article a#ig:hover {
+    color: #fc4e5b;
+ }
+
+ article a#twitter:hover {
+    color: #1ba8ff;
+ }
+
+ article a#linkedin:hover {
+    color: #0075b4;
+ }
+
+ article a#yt:hover {
+    color: #FF0000;
+ }
+
+ article a#github:hover {
+     color: #34495e;
+ }
+
+
+ #footer {
+    margin-top: 15%;
+    margin-bottom: 2%;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+footer p {
+    margin: 0 auto;
+    color: var(--footer-color);
+}
+
+footer p, footer a {
+    font-size: 1rem;
+    line-height: 160%;
+    font-weight: 300;
+    letter-spacing: .5px;
+}
+
+footer p:hover {
+    color: var(--footer-hover);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--footer-hover);
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1043px) {
+
+    #container {
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 3.8rem;
+    }
+
+    h1 span#hand {
+        font-size: 3.5rem;
+    }
+
+    article p {
+        font-size: 1.6rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+
+    .slider {
+        width: 90%;
+        height: 85%;
+      }
+
+    .slider:before {
+        height: 20px;
+        width: 20px;
+    }
+
+    .fa-2x {
+        font-size: 1.7em;
+    }
+
+  }
+
+@media only screen and (max-width: 962px) {
+    #container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 3.6rem;
+    }
+
+    h1 span#hand {
+        font-size: 3.3rem;
+    }
+
+    article p {
+        font-size: 1.5rem;
+    }
+
+    footer p, footer a {
+        font-size: .9rem;
+    }
+
+    .slider {
+        width: 85%;
+        height: 79%;
+      }
+
+    .slider:before {
+        height: 18px;
+        width: 18px;
+    }
+
+    .fa-2x {
+        display: none;
+    }
+
+  }
+
+  @media only screen and (max-width: 787px) {
+    h1 {
+        font-size: 3.1rem;
+    }
+
+    h1 span#hand {
+        font-size: 2.9rem;
+    }
+
+    article p {
+        font-size: 1.4rem;
+    }
+
+     footer p, footer a{
+         font-size: .85rem;
+     }
+
+     .slider {
+        width: 80%;
+        height: 70%;
+      }
+
+    .slider:before {
+        height: 15px;
+        width: 15px;
+    }
+
+    .fa-2x {
+        display: none;
+    }
+  }
+
+@media only screen and (max-width: 684px) {
+   
+    #container {
+       width: 90%;
+   }
+
+   
+    h1 {
+        font-size: 3.1rem;
+    }
+
+    h1 span#hand {
+        font-size: 2.5rem;
+    }
+
+    article p {
+        font-size: 1.3rem;
+    }
+
+     footer p, footer a{
+         font-size: .8rem;
+     }
+
+     .slider {
+        width: 75%;
+        height: 60%;
+      }
+
+    .slider:before {
+        height: 12px;
+        width: 12px;
+    }
+
+    .fa-2x {
+        display: none;
+    }
+
+  }
+
+  @media only screen and (max-width: 376px) {
+   
+    #container {
+       width: 90%;
+   }
+   
+    h1 {
+        font-size: 2.9rem;
+    }
+
+    h1 span#hand {
+        font-size: 2.2rem;
+    }
+
+    article p {
+        font-size: 1.2rem;
+    }
+
+     footer p, footer a {
+         font-size: .6rem;
+     }
+
+  }
+
+
